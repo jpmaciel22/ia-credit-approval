@@ -1,5 +1,4 @@
 import pandas as pd
-import numpy as np
 import matplotlib.pyplot as plt
 
 from ucimlrepo import fetch_ucirepo
@@ -41,11 +40,6 @@ y = y[dados_validos].astype(int)
 # print(y.value_counts())
 # print(y.value_counts(normalize=True))
 
-for coluna in x_df.columns:
-    if pd.api.types.is_numeric_dtype(x_df[coluna]):
-        x_df[coluna] = x_df[coluna].fillna(x_df[coluna].median())
-    else:
-        x_df[coluna] = x_df[coluna].fillna("Desconhecido")
 
 x_df = pd.get_dummies(x_df, drop_first=True)
 
